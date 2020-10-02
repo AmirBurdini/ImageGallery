@@ -7,7 +7,7 @@ class App extends Component {
   
   state = {
     images : [],
-    num : 3,
+    num : 6,
   }
   
   // a shuffle func to randomize images order
@@ -49,7 +49,8 @@ class App extends Component {
     // if successful
     .then(res => {
       this.setState({
-        images : res.data.images.images,
+        // randomize order
+        images : this.shuffle(res.data.images.images),
       })
     }); 
   }
